@@ -1,0 +1,170 @@
+@use "../util" as u;
+
+/*******Header Section*********/
+.header {
+  $pd-block: 45;
+  $pd-inline: 20;
+  padding: u.pxtorem($pd-block) u.pxtorem($pd-inline);
+  position: absolute;
+  inset: 0 0 auto;
+  width: 100%;
+  z-index: 2;
+  justify-content: center;
+  @include u.breakpoint-desktop(md) {
+    padding: u.pxtorem(25) u.pxtorem(20);
+    justify-content: flex-start;
+  }
+
+  & .navbar-ham {
+    position: absolute;
+    left: u.pxtorem($pd-inline);
+    top: u.pxtorem($pd-block);
+
+    @include u.breakpoint-desktop(md) {
+      display: none;
+    }
+  }
+
+  & .nav {
+    position: fixed;
+    inset: 0 0 auto;
+    padding: u.pxtorem(28);
+    width: 100%;
+    justify-content: space-between;
+    background-color: var(--primary-white);
+    display: none;
+
+    &[data-visible="true"] {
+      display: flex;
+    }
+    @include u.breakpoint-desktop(md) {
+      position: static;
+      display: flex;
+      background-color: transparent;
+      padding: u.pxtorem(0);
+    }
+
+    & .navbar-close {
+      transform: rotateZ(90deg);
+
+      @include u.breakpoint-desktop(md) {
+        display: none;
+      }
+      & img {
+        width: u.pxtorem(20);
+        object-fit: cover;
+      }
+    }
+
+    & .primary-nav {
+      gap: u.pxtorem(25);
+      font-size: u.pxtorem(16);
+      & a {
+        color: var(--primary-black);
+        font-weight: 700;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          inset: auto 0 u.pxtorem(-6);
+          border-bottom: u.pxtorem(2) solid var(--primary-white);
+          width: 0;
+          margin: auto;
+          transition: width 0.3s;
+          -webkit-transition: width 0.3s;
+          -moz-transition: width 0.3s;
+          -ms-transition: width 0.3s;
+          -o-transition: width 0.3s;
+        }
+
+        @include u.breakpoint-desktop(md) {
+          color: var(--primary-white);
+          font-weight: 500;
+
+          &:hover::after {
+            width: 40%;
+          }
+        }
+      }
+    }
+  }
+}
+/******Navbar Overlay*******/
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--primary-black);
+  opacity: 0.7;
+  z-index: 1;
+  display: none;
+  @include u.breakpoint-desktop(md) {
+    display: none;
+  }
+}
+
+/*******Main Section*********/
+.main {
+  @include u.breakpoint-desktop(md) {
+    grid-template-columns: 1fr 40%;
+    grid-template-rows: 68vh;
+  }
+  & .slider {
+    height: auto;
+    position: relative;
+
+    & > img {
+      width: 100%;
+      height: 100%;
+    }
+    & .slider-control {
+      position: absolute;
+      inset: auto 0 0 auto;
+      background-color: var(--primary-black);
+
+      & > * {
+        padding: u.pxtorem(16) u.pxtorem(25);
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover {
+          background-color: var(--primary-verydarkgray);
+        }
+      }
+
+      @include u.breakpoint-desktop(md) {
+        transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        -moz-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        -o-transform: translateX(100%);
+      }
+    }
+  }
+
+  & .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: u.pxtorem(45) u.pxtorem(25);
+    @include u.breakpoint-desktop(md) {
+        padding: u.pxtoem(45);
+      }
+  }
+}
+
+/*******About Section*********/
+.about-sec {
+  @include u.breakpoint-desktop(md) {
+    grid-template-columns: 1fr 1.8fr 1fr;
+    grid-template-rows: min-content;
+  }
+  & .about-content {
+    padding: u.pxtorem(38) u.pxtorem(25);
+
+    & .about-heading {
+      text-transform: uppercase;
+      letter-spacing: u.pxtorem(5);
+    }
+  }
+}

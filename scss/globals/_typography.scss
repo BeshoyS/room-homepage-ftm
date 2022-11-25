@@ -1,0 +1,38 @@
+@use "../util" as u;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(u.pxtorem(35), u.pxtorem(15) + 2vw, u.pxtorem(40));
+}
+
+h2 {
+  font-size: clamp(u.pxtorem(20), u.pxtorem(10) + 1.5vw, u.pxtorem(28));
+}
+
+h3 {
+  font-size: clamp(u.pxtorem(15), u.pxtorem(8) + 1.5vw, u.pxtorem(23));
+}
+
+p {
+  margin: 0;
+  line-height: 1.5;
+  font-size: clamp(u.pxtorem(10), u.pxtorem(7) + 1.5vw, u.pxtorem(16));
+  color: var(--primary-darkgray);
+  padding-block: u.pxtorem(18);
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}

@@ -1,59 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Room homepage</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <div id="NavOverlay" class="overlay" aria-hidden="true"></div>
+    <header class="header flex">
+      <button
+        id="navbarHam"
+        class="navbar-ham"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+      >
+        <img src="./images/icon-hamburger.svg" />
+      </button>
+      <div class="logo-wrapper">
+        <img src="./images/logo.svg" alt="Room homepage" />
+      </div>
+      <nav id="primary-nav" class="nav" data-visible="false">
+        <button id="navbarClose" class="navbar-close" aria-expanded="false">
+          <img src="./images/icon-close.svg" />
+        </button>
+        <ul class="primary-nav flex">
+          <li><a href="#">home</a></li>
+          <li><a href="#">shop</a></li>
+          <li><a href="#">about</a></li>
+          <li><a href="#">contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="grid container">
+      <main class="main grid">
+        <section id="slider" class="slider">
+          <picture>
+            <source
+              media="(min-width: 700px)"
+              srcset="./images/desktop-image-hero-1.jpg"
+            />
+            <img id="heroImg" src="./images/mobile-image-hero-1.jpg" />
+          </picture>
+          <div class="slider-control flex">
+            <div id="arrowPrev" class="arrow-prev">
+              <img src="./images/icon-angle-left.svg" alt="" />
+            </div>
+            <div id="arrowNext" class="arrow-next">
+              <img src="./images/icon-angle-right.svg" alt="" />
+            </div>
+          </div>
+        </section>
+        <section id="heroContent" class="hero-content">
+          <h1 class="title">Discover innovative ways to decorate</h1>
+          <p class="desc">
+            We provide unmatched quality, comfort, and style for property owners
+            across the country. Our experts combine form and function in
+            bringing your vision to life. Create a room in your own style with
+            our collection and make your property a reflection of you and what
+            you love.
+          </p>
+          <button class="btn">Shop Now</button>
+        </section>
+      </main>
+      <section class="about-sec grid">
+        <section class="before-img">
+          <img src="./images/image-about-dark.jpg" />
+        </section>
+        <section class="about-content">
+          <h3 class="about-heading">About our furniture</h3>
+          <p class="about-desc">
+            Our multifunctional collection blends design and function to suit
+            your individual taste. Make each room unique, or pick a cohesive
+            theme that best express your interests and what inspires you. Find
+            the furniture pieces you need, from traditional to contemporary
+            styles or anything in between. Product specialists are available to
+            help you create your dream space.
+          </p>
+        </section>
+        <section class="after-img">
+          <img src="./images/image-about-light.jpg" />
+        </section>
+      </section>
+    </div>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Room homepage</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  Home
-  Shop
-  About
-  Contact
-
-  Discover innovative ways to decorate
-
-  We provide unmatched quality, comfort, and style for property owners across the country. 
-  Our experts combine form and function in bringing your vision to life. Create a room in your 
-  own style with our collection and make your property a reflection of you and what you love.
-
-  Shop now
-
-  We are available all across the globe
-
-  With stores all over the world, it's easy for you to find furniture for your home or place of business. 
-  Locally, we’re in most major cities throughout the country. Find the branch nearest you using our 
-  store locator. Any questions? Don't hesitate to contact us today.
-
-  Shop now
-
-  Manufactured with the best materials
-
-  Our modern furniture store provide a high level of quality. Our company has invested in advanced technology 
-  to ensure that every product is made as perfect and as consistent as possible. With three decades of 
-  experience in this industry, we understand what customers want for their home and office.
-
-  Shop now
-
-  About our furniture
-
-  Our multifunctional collection blends design and function to suit your individual taste.
-  Make each room unique, or pick a cohesive theme that best express your interests and what
-  inspires you. Find the furniture pieces you need, from traditional to contemporary styles
-  or anything in between. Product specialists are available to help you create your dream space.
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+    <script type="module" src="./app/main.js"></script>
+  </body>
 </html>
